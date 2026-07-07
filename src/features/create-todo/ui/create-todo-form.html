@@ -1,0 +1,34 @@
+<section class="create-todo" data-layer="features" data-slice="create-todo" aria-labelledby="create-todo-title">
+  <h2 id="create-todo-title">タスクを追加</h2>
+
+  <form class="create-todo-form" action="#" method="post" data-feature="create-todo">
+    <div class="form-field">
+      <label class="form-field__label" for="todo-title">タスク名</label>
+      <input
+        class="form-field__control"
+        id="todo-title"
+        name="title"
+        type="text"
+        autocomplete="off"
+        placeholder="例: 輪読資料を読む"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="todo-due-date">期限</label>
+      <input class="form-field__control" id="todo-due-date" name="dueDate" type="date" />
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="todo-priority">優先度</label>
+      <select class="form-field__control" id="todo-priority" name="priority">
+        <option value="normal">通常</option>
+        <option value="high">高い</option>
+        <option value="low">低い</option>
+      </select>
+    </div>
+
+    <button class="button button--primary" type="submit" data-ui="button">追加</button>
+  </form>
+</section>

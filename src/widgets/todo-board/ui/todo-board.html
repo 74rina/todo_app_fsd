@@ -1,0 +1,22 @@
+<section class="todo-board" data-layer="widgets" data-slice="todo-board" aria-labelledby="todo-board-title">
+  <div class="todo-board__header">
+    <h2 id="todo-board-title">タスク一覧</h2>
+    <form class="search-todos" action="#" role="search" data-layer="features" data-slice="search-todos"></form>
+  </div>
+
+  <div class="todo-board__toolbar">
+    <div class="filter-todos" data-layer="features" data-slice="filter-todos" aria-label="表示するタスク"></div>
+    <button
+      class="button button--danger"
+      type="button"
+      data-layer="features"
+      data-slice="clear-completed-todos"
+      data-feature="clear-completed-todos"
+    >
+      完了済みを削除
+    </button>
+  </div>
+
+  <ul class="todo-list" data-layer="entities" data-entity="todo" aria-label="タスク一覧"></ul>
+  <p class="todo-empty" data-entity="todo" data-state="empty" hidden>表示できるタスクがありません。</p>
+</section>

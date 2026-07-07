@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+  </head>
+  <body>
+    <div class="page-shell" data-layer="shared" data-slice="page-shell">
+      <header class="todo-header" data-layer="widgets" data-slice="todo-header">
+        <p class="todo-header__eyebrow">FSD ToDo</p>
+        <h1 class="todo-header__title">今日のタスク</h1>
+      </header>
+
+      <main id="app" class="todos-page" data-layer="pages" data-page="todos">
+        <section class="create-todo" data-layer="features" data-slice="create-todo" aria-labelledby="create-todo-title">
+          <h2 id="create-todo-title">タスクを追加</h2>
+
+          <form class="create-todo-form" action="#" method="post" data-feature="create-todo">
+            <div class="form-field">
+              <label class="form-field__label" for="todo-title">タスク名</label>
+              <input
+                class="form-field__control"
+                id="todo-title"
+                name="title"
+                type="text"
+                autocomplete="off"
+                placeholder="例: 輪読資料を読む"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="todo-due-date">期限</label>
+              <input class="form-field__control" id="todo-due-date" name="dueDate" type="date" />
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="todo-priority">優先度</label>
+              <select class="form-field__control" id="todo-priority" name="priority">
+                <option value="normal">通常</option>
+                <option value="high">高い</option>
+                <option value="low">低い</option>
+              </select>
+            </div>
+
+            <button class="button button--primary" type="submit" data-ui="button">追加</button>
+          </form>
+        </section>
+
+        <section class="todo-board" data-layer="widgets" data-slice="todo-board" aria-labelledby="todo-board-title">
+          <div class="todo-board__header">
+            <h2 id="todo-board-title">タスク一覧</h2>
+
+            <form class="search-todos" action="#" role="search" data-layer="features" data-slice="search-todos">
+              <label class="form-field__label" for="todo-search">検索</label>
+              <input
+                class="form-field__control"
+                id="todo-search"
+                name="keyword"
+                type="search"
+                autocomplete="off"
+                placeholder="キーワード"
+              />
+            </form>
+          </div>
+
+          <div class="todo-board__toolbar">
+            <div class="filter-todos" data-layer="features" data-slice="filter-todos" aria-label="表示するタスク">
+              <button class="button" type="button" data-filter="all" aria-pressed="true">すべて</button>
+              <button class="button" type="button" data-filter="active" aria-pressed="false">未完了</button>
+              <button class="button" type="button" data-filter="completed" aria-pressed="false">完了</button>
+            </div>
+
+            <button
+              class="button button--danger"
+              type="button"
+              data-layer="features"
+              data-slice="clear-completed-todos"
+              data-feature="clear-completed-todos"
+            >
+              完了済みを削除
+            </button>
+          </div>
+
+          <ul class="todo-list" data-layer="entities" data-entity="todo" aria-label="タスク一覧">
+            <li class="todo-item" data-entity="todo" data-todo-id="sample-1" data-status="active">
+              <label class="todo-item__check">
+                <input type="checkbox" name="completed" data-feature="toggle-todo" />
+                <span class="todo-item__title">FSDのレイヤーを確認する</span>
+              </label>
+              <span class="todo-item__meta">
+                <time datetime="2026-07-08">7/8</time>
+                <span data-priority="high">高い</span>
+              </span>
+              <div class="todo-item__actions" aria-label="タスク操作">
+                <button class="button" type="button" data-feature="edit-todo">編集</button>
+                <button class="button" type="button" data-feature="delete-todo">削除</button>
+              </div>
+            </li>
+
+            <li class="todo-item" data-entity="todo" data-todo-id="sample-2" data-status="completed">
+              <label class="todo-item__check">
+                <input type="checkbox" name="completed" data-feature="toggle-todo" checked />
+                <span class="todo-item__title">画面HTMLを読み込む</span>
+              </label>
+              <span class="todo-item__meta">
+                <time datetime="2026-07-07">7/7</time>
+                <span data-priority="normal">通常</span>
+              </span>
+              <div class="todo-item__actions" aria-label="タスク操作">
+                <button class="button" type="button" data-feature="edit-todo">編集</button>
+                <button class="button" type="button" data-feature="delete-todo">削除</button>
+              </div>
+            </li>
+          </ul>
+
+          <p class="todo-empty" data-entity="todo" data-state="empty" hidden>表示できるタスクがありません。</p>
+        </section>
+      </main>
+
+      <footer class="todo-footer" data-layer="widgets" data-slice="todo-footer">
+        <p>
+          <output id="active-todo-count" name="activeTodoCount">1</output>
+          件の未完了タスク
+        </p>
+      </footer>
+    </div>
+
+    <template id="todo-item-template">
+      <li class="todo-item" data-entity="todo" data-todo-id="" data-status="active">
+        <label class="todo-item__check">
+          <input type="checkbox" name="completed" data-feature="toggle-todo" />
+          <span class="todo-item__title"></span>
+        </label>
+        <span class="todo-item__meta">
+          <time datetime=""></time>
+          <span data-priority=""></span>
+        </span>
+        <div class="todo-item__actions" aria-label="タスク操作">
+          <button class="button" type="button" data-feature="edit-todo">編集</button>
+          <button class="button" type="button" data-feature="delete-todo">削除</button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>
