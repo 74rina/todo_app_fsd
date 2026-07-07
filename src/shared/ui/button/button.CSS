@@ -1,0 +1,32 @@
+.button {
+  /* 構造のベース */
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* グラフィックの核心 */
+  background-color: #ffffff;
+  border: 2px solid #333333;
+  border-radius: 8px; /* 角丸で柔らかく */
+  box-shadow: 0 4px 0px #333333; /* 平面的な影でポップさを出す */
+
+  /* アニメーションのスムーズさ */
+  transition: all 0.2s ease;
+}
+
+/* マウスを乗せたとき（ホバー） */
+.btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0px #333333;
+}
+
+/* クリックした瞬間 */
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0px 0px #333333;
+}
