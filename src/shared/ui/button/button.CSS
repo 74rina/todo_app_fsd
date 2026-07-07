@@ -1,32 +1,27 @@
 .button {
-  /* 構造のベース */
-  display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-size: 16px;
-  font-weight: 600;
-  color: #333333;
-  text-align: center;
-  text-decoration: none;
+  color: #00f2fe;
+  background: transparent; /* 背景は透明 */
+  border: 2px solid #00f2fe;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
 
-  /* グラフィックの核心 */
-  background-color: #ffffff;
-  border: 2px solid #333333;
-  border-radius: 8px; /* 角丸で柔らかく */
-  box-shadow: 0 4px 0px #333333; /* 平面的な影でポップさを出す */
-
-  /* アニメーションのスムーズさ */
-  transition: all 0.2s ease;
+  /* ネオンのような光彩 */
+  text-shadow: 0 0 8px #00f2fe;
+  box-shadow:
+    0 0 8px #00f2fe,
+    inset 0 0 8px #00f2fe;
+  transition: 0.5s;
 }
 
-/* マウスを乗せたとき（ホバー） */
-.btn:hover {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0px #333333;
-}
-
-/* クリックした瞬間 */
-.btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 0px 0px #333333;
+.button:hover {
+  color: #ffffff;
+  background: #00f2fe;
+  /* ホバーで全体を発光させる */
+  box-shadow:
+    0 0 20px #00f2fe,
+    0 0 60px #00f2fe;
 }
