@@ -4,20 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
+    <link rel="stylesheet" href="button.CSS" />
   </head>
   <body>
     <div class="page-shell" data-layer="shared" data-slice="page-shell">
       <div data-include="./src/widgets/todo-header/ui/todo-header.html"></div>
 
       <main id="app" class="todos-page" data-layer="pages" data-page="todos">
-        <div data-include="./src/features/create-todo/ui/create-todo-form.html"></div>
+        <div
+          data-include="./src/features/create-todo/ui/create-todo-form.html"
+        ></div>
         <div data-include="./src/widgets/todo-board/ui/todo-board.html"></div>
       </main>
 
       <div data-include="./src/widgets/todo-footer/ui/todo-footer.html"></div>
     </div>
 
-    <template id="todo-item-template" data-include="./src/entities/todo/ui/todo-item.html"></template>
+    <template
+      id="todo-item-template"
+      data-include="./src/entities/todo/ui/todo-item.html"
+    ></template>
     <script src="./src/app/include-html.js" defer></script>
   </body>
 </html>
